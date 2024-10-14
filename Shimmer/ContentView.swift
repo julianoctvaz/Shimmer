@@ -9,39 +9,38 @@
 import SwiftUI
 import ShimmeringUiView
 
-struct TestShimmer: View {
+struct ContentView: View {
     
-    @State var isLoading: Bool = true
+//    @State var isLoading: Bool = true //2
     
     var body: some View {
-        ZStack {
-            Color.clear
+        ZStack (alignment: .topLeading){
+            Color.red.opacity(0.2)
             HStack {
                 Image("burnoutinho")
                     .resizable()
                     .scaledToFit()
                     .padding()
                 
-                Text("Hello")
+                Text("Burnoutinho não é seu amiguinho")
                     .fontWeight(.bold)
                     .fontDesign(.rounded)
                     .fontWidth(.expanded)
                     .padding()
             }
-            .shimmering(active: isLoading)
+            .padding(.top, 50)
+//            .shimmering(active: isLoading) // 1
         }
         .ignoresSafeArea()
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                isLoading = false
-            
-            }
-        }
-
+//        .onAppear { //3
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                isLoading = false
+//            
+//            }
+//        }
     }
-    
 }
 
 #Preview {
-    TestShimmer()
+    ContentView()
 }
