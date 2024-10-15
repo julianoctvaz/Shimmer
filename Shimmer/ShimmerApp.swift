@@ -14,7 +14,6 @@ struct ShimmerApp: App {
 //            ContentView()
 //            DecodingFruitView()
             DecodingFruitArrayView()
-//            DecodingFruitArrayViewAndEmptyValues()
         }
     }
 }
